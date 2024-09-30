@@ -1,4 +1,4 @@
-FROM dokken/centos-8
+FROM docker.io/redhat/ubi8
 RUN dnf install nginx -y
 RUN dnf install unzip -y
 RUN rm -rf /usr/share/nginx/html/*
