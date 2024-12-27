@@ -18,3 +18,4 @@ RUN sed -i 's|mirrorlist=|#mirrorlist=|g' /etc/yum.repos.d/CentOS-*.repo && \
 
 # Set the entrypoint to a shell for immediate interaction
 ENTRYPOINT ["tail","-f", "/dev/null"]
+
