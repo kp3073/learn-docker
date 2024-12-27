@@ -1,7 +1,7 @@
 services:
   frontend:
     container_name: frontend
-    image: kp3073/frontend:23
+    image: kp3073/frontend:24
     ports:
     - "80:80"
     depends_on:
