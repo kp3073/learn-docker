@@ -9,3 +9,36 @@ services:
   catalogue:
     container_name: catalogue
     image: kp3073/catalogue:16
+    environment:
+      MONGO_URL: "mongodb://mongodb:27017/catalogue"
+    depends_on:
+    - mongodb
+  mongo:
+    container_name: mongo
+    image: kp3073/mongo:25
+  cart:
+    container_name: cart
+    image: kp3073/cart:15
+    #    environment:
+    #      REDIS_HOST: redis
+    #      CATALOGUE_HOST: catalogue
+    depends_on:
+    - catalogue
+  #    - redis
+#  mysql:
+#    container_name: mysql
+#    image: kp3073/mysql:19
+#    environment:
+#      MYSQL_ROOT_PASSWORD: "root123"
+#  payment:
+#    container_name: payment
+#    image: kp3073/payment:20
+#  user:
+#    container_name: user
+#    image: kp3073/user:26
+#    environment:
+#      MONGO_URL: "mongodb://mongodb:27017/users"
+#      REDIS_HOST: redis
+#    depends_on:
+#    - mongodb
+#    - redis
