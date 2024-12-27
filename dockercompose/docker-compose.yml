@@ -4,6 +4,8 @@ services:
     image: kp3073/frontend:22
     ports:
     - "80:80"
-#  catalogue:
-#    container_name: catalogue
-#    image: kp3073/catalogue:16
+    depends_on:
+    - catalogue
+  catalogue:
+    container_name: catalogue
+    image: kp3073/catalogue:16
