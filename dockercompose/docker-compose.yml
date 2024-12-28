@@ -44,8 +44,8 @@ services:
   #    image: kp3073/payment:20
   
   redis:
-    container_name: redis
     image: redis
+    container_name: redis
 #  user:
 #    container_name: user
 #    image: kp3073/user:26
