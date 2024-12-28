@@ -17,7 +17,7 @@ services:
     - mongodb
   frontend:
     container_name: frontend
-    image: kp3073/frontend:36
+    image: kp3073/frontend:37
     ports:
     - "80:80"
     depends_on:
@@ -46,12 +46,12 @@ services:
   redis:
     container_name: redis
     image: redis
-  user:
-    container_name: user
-    image: kp3073/user:26
-    environment:
-      MONGO_URL: "mongodb://mongodb:27017/users"
-      REDIS_HOST: redis
-    depends_on:
-    - mongodb
-    - redis  
+#  user:
+#    container_name: user
+#    image: kp3073/user:26
+#    environment:
+#      MONGO_URL: "mongodb://mongodb:27017/users"
+#      REDIS_HOST: redis
+#    depends_on:
+#    - mongodb
+#    - redis  
