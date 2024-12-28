@@ -2,12 +2,12 @@ services:
   cart:
     container_name: cart
     image: kp3073/cart:15
-    #    environment:
-    #      REDIS_HOST: redis
-    #      CATALOGUE_HOST: catalogue
-  #    depends_on:
-  #    - catalogue
-  #  #    - redis
+    environment:
+      REDIS_HOST: redis
+      CATALOGUE_HOST: catalogue
+      depends_on:
+      - catalogue
+      - redis
   catalogue:
     container_name: catalogue
     image: kp3073/catalogue:16
