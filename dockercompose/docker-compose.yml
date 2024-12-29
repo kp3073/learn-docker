@@ -17,7 +17,7 @@ services:
     - mongodb
   frontend:
     container_name: frontend
-    image: kp3073/frontend:53
+    image: kp3073/frontend:54
     ports:
     - "80:80"
     depends_on:
@@ -36,13 +36,13 @@ services:
     image: kp3073/mysql:19
     environment:
       MYSQL_ROOT_PASSWORD: "root123"
-  payment:
-    container_name: payment
-    image: kp3073/payment:20
-    environment:
-      CART_HOST: cart
-      USER_HOST: user
-      AMQP_HOST: rabbitmq
+  #  payment:
+  #    container_name: payment
+  #    image: kp3073/payment:20
+  #    environment:
+  #      CART_HOST: cart
+  #      USER_HOST: user
+  #      AMQP_HOST: rabbitmq
   user:
     container_name: user
     image: kp3073/user:42
