@@ -5,9 +5,9 @@ services:
     environment:
       REDIS_HOST: redis
       CATALOGUE_HOST: catalogue
-      depends_on:
-      - catalogue
-      - redis
+    depends_on:
+    - catalogue
+    - redis
   catalogue:
     container_name: catalogue
     image: kp3073/catalogue:16
@@ -23,17 +23,11 @@ services:
     depends_on:
     - catalogue
   mongodb:
-    container_name: mongodb
     image: kp3073/mongodb:34
-    cart:
-      container_name: cart
-      image: kp3073/cart:15
-      environment:
-        REDIS_HOST: redis
-        CATALOGUE_HOST: catalogue
-      depends_on:
-      - catalogue
-      - redis
+    container_name: mongodb
+  redis:
+    image: redis
+    container_name: redis
   #  mysql:
   #    container_name: mysql
   #    image: kp3073/mysql:19
@@ -42,10 +36,6 @@ services:
   #  payment:
   #    container_name: payment
   #    image: kp3073/payment:20
-  
-  redis:
-    image: redis
-    container_name: redis
   user:
     container_name: user
     image: kp3073/user:26
@@ -54,4 +44,4 @@ services:
       REDIS_HOST: redis
     depends_on:
     - mongodb
-    - redis  
+    - redis
