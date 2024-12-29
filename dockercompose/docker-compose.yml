@@ -17,11 +17,14 @@ services:
     - mongodb
   frontend:
     container_name: frontend
-    image: kp3073/frontend:41
+    image: kp3073/frontend:43
     ports:
     - "80:80"
     depends_on:
     - catalogue
+    - user
+    - cart
+  
   mongodb:
     image: kp3073/mongodb:34
     container_name: mongodb
