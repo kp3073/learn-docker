@@ -17,7 +17,7 @@ services:
     - mongodb
   frontend:
     container_name: frontend
-    image: kp3073/frontend:39
+    image: kp3073/frontend:41
     ports:
     - "80:80"
     depends_on:
