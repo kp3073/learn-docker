@@ -53,14 +53,14 @@ services:
     depends_on:
     - mongodb
     - redis
-  #  shipping:
-  #    container_name: shipping
-  #    image: kp3073/shipping:52
-  #    environment:
-  #      CART_ENDPOINT: "cart:7000"
-  #      DB_HOST: mysql
-  #    depends_on:
-  #    - mysql
+    shipping:
+      container_name: shipping
+      image: kp3073/shipping:52
+      environment:
+        CART_ENDPOINT: "cart:7000"
+        DB_HOST: mysql
+      depends_on:
+      - mysql
   rabbitmq:
     container_name: rabbitmq
     image: rabbitmq
