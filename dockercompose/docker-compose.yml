@@ -55,7 +55,7 @@ services:
     - redis
   shipping:
     container_name: shipping
-    image: kp3073/shipping:61
+    image: kp3073/shipping:63
     environment:
       CART_ENDPOINT: "cart:7000"
       DB_HOST: mysql
