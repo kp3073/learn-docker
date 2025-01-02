@@ -24,7 +24,6 @@ services:
     - catalogue
     - user
     - cart
-    - shipping
   
   mongodb:
     image: kp3073/mongodb:34
